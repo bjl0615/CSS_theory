@@ -1,0 +1,38 @@
+<!--
+    선택자는 복잡하고 다양한 요소들 사이에서 내가 원하는 요소만을 선택할 수 있도록 도와준다.
+    완성도 있는 디자인을 표현하기 위해서는 반드시 내가 원하는 요소를 선택할 수 있어야 하기 때문에 선택자는 매우 중요하다.
+    또 활용 수준에 따라 아주 기본적이면서 매우 복잡하므로 기초 부분을 잘 이해해야 한다.
+
+    선택자
+        - 요소 선택자(태그)
+            요소 선택자는 위 코드 처럼 선택자 부분에 태그 이름이 들어간다.
+            문서 내에 선택자에 해당하는 모든 요소에 모든 요소에 스타일 규칙이 적용된다.
+                그룹화 
+                    선택자는 쉼표를 이용해서 그룹화를 할 수 있다.
+                        선택자 : h1, h2, h3, h4, h5, h6 {color:yellow;}
+                        전체 석택자 : * {color:yellow;}
+                            *{별표, asterisk} 기호로 문서 내에 모든 요소를 선택 할 수 있다.
+                            이렇게 선언하면, 한 번의 선언만으로 문서 내에 모든 요소에 스타일 규칙이 적용된다.
+                            전체 선택자는 매우 편리하지만, 서능에 좋지 않으므로 될 수 있으면 사용을 지양한다.
+                        선언 : h1{ color:yellow; font-size:2em; background-color:gray;}
+                        선택자 & 선언 :    h1, h2, h3, h4, h5, h6{ color:yellow; font-size:2em; background-color:gray;}  
+        - class 선택자
+        - id 선택자
+        - 속성 선택자
+
+-->
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="EUC-KR">
+        <title>css</title>
+        <style>
+            h1{color:yellow; font-size:2em; background-color: gray;}
+        </style>
+    </head>
+    <body>
+        <h1>Hello, CSS</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, earum unde. Ipsum delectus quo officia hic soluta quia ipsam doloremque porro eius expedita rerum accusantium, sequi, molestias excepturi dolorum totam.</p>
+    </body>
+</html>
