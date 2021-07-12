@@ -1,0 +1,91 @@
+<!--
+    아래 HTML문서에서 "HMTL"이라는 문자에는 보라색 글자를 지정하고,
+    "CSS"라는 문자에는 밑줄(text-decoration(장식): underline(밑줄))을 선언하고 싶으면 어떻게 선택자를 사용해야 할까?
+
+    class 선택자
+         요소에 구애받지 않고 스타일 큐칙을 적용할 수 있는 가장 일반적인 방법은 class 선택자를 활용하는 것이다.
+         class 선택자를 사용하기 위해서는 HTML을 수정해 class 속성을 추가해야 한다.
+         class 속성은 글로벌 속성이므로 어느 태그에서도 사용할 수 있다.
+         class 속성에 값을 넣게 되면, class 선택자를 이용해서 해당 요소에 스타일 규칙을 적용할 수 있다.
+
+         css
+         .foo {font-size : 30px;}
+
+         html
+         <p class="foo"> ... </p>
+        위 코드처럼 <p>의 class 속성의 값으로 "foo"라는 값을 넣었다면, CSS에서
+        그 값("foo")을 선택자로 지정하면 된다.
+        클래스 선택자를 쓸 떄는, 맨 앞에 .(마침표)를 찍어주어야 한다.
+        이렇게 되면 어느 요소든지 class 속성값이 "foo"로 선언된 요소가 있다면 해당 스타일 규칙을 적용받게 된다.
+        그럼 이제 클래스 선택자를 이용해서 문제를 풀어보자
+
+        style 태그안의 media 속성은 특정 음성 매체나 인쇄 매체, 장치 등을 위한 스타일을 명시하는데 사용되며, 동시에 여러 개의 속성값을 가질 수 있다.
+    
+    다중 class
+        class 속성은 꼭 하나의 값만 가질 수 있는 것은 아니다.
+        공백으로 구분하여 여러 개의 class 값을 넣을 수 있다.
+        .foo { font-size: 30px; }
+        .bar { color: blue; }
+
+        <p class="foo bar"> ... </p>
+        위의 <p>에 class 속성에 "foo"와 "bar" 2개의 값을 넣었다.
+        그리고 foo class 선택자에는 폰트의 크기를 30px로, bar class 선택자에는 글자를 파란색으로 적용하는 스타일 규칙이 선언되어있다.
+        그렇게 되면 <p>에는 2개의 규칙이 모두 적용이 된다.
+    
+    ID 선택자
+        id 선택자는 class 선택자와 비슷하다.
+        선택자를 쓸 때는, .(마침표) 기호 대신 #(해시) 기호를 쓴다.
+        요소에는 class 속성 대신 id 속성만 써준다.
+        #bar { background-color: yellow; }
+        <p id="bar"> ... </p>
+
+    class 선택자와 id 선택자와의 차이점
+            1. .기호가 아닌 #기호 사용
+            2. 태그의 class 속성이 아닌 id 속성을 참조
+            3. 문서 내에 유일한 요소에 사용
+            4. 구체성
+            가장 큰 차이점은 class와 달리 id는 문서 내에서 유일해야 한다는 점이다.
+            클래스 선택자는 여러 요소에 같은 클래스를 넣고 같은 규칙을 적용할 수 있다.
+            그리고 그것이 클래스 선택자의 장점이기도 한다.
+            하지만 id 속성 값은 문서 내에 유일하게 사용이 되어야 한다.
+            결국, id 선택자로 규칙을 적용할 수 있는 요소는 단 하나뿐이다.
+            그리고 마지막으로 구체성의 값이 다르다.
+-->
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="EUC-KR">
+        <style media="screen" >
+            .html { color:purple }
+            .css { text-decoration: underline;}
+            .js { color:purple; text-decoration: underline;}
+            #id-selector {font-size: 30px;}
+        </style>
+    </head>
+    <body>
+        <d1>HTML</d1>
+            <dd><span>HTML</span>은 문서의 구조를 나타낸다.</dd>
+            <dt>CSS</dt>
+            <dd><span>CSS</span>는 문서의 표현을 나타낸다.</dd>
+
+         
+        <d1>
+            <dt class="html">HTML</dt>
+            <dd><span class="html">HTML</span>은 문서의 구조를 나타낸다.</dd>
+            <dt class="css">CSS</dt>
+            <dd><span class="css">CSS</span>는 문서의 표현을 나타낸다.</dd>  
+        </d1>
+        
+        <d1>
+            <dt class="html">HTML</dt>
+            <dd><span class="html">HTML</span>은 문서의 구조를 나타낸다.</dd>
+            <dt class="css">CSS</dt>
+            <dd><span class="css">CSS</span>는 문서의 표현을 나타낸다.</dd> 
+            <dt class="js">JS</dt>
+            <dd><span class="js">JS</span>는 문서의 동작을 나타낸다.</dd> 
+        </d1>
+
+        <p id="id-selector">id 선택자는 해쉬 기호를 사용한다.</p>
+    </body>
+</html>
