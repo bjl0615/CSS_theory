@@ -1,0 +1,48 @@
+<!--
+    가상 요소(pseudo element)
+        가상 요소는 HTML 코드에 존재하지 않는 구조 요소에 스타일을 부여할 수가 있다.
+        가상 요소도 가상 클래스처럼 문서 내에 보이진 않지만, 미리 정의한 위치에 삽입되도록 약속이 돼있다.
+        선언 방법은 가상 클래스와 같게 콜론을 사용한며
+        CSS3부터 가상 클래스와 가상 요소를 구분하기 위해 가상 요소에는 ::(더블 콜론) 기호를 사용하기로 한다.
+        하지만 하위 브라우저에서 :: 문법을 지원하지 않는 문제가 있으므로 상화에 따라 : 기호를 사용하셔야 한다.
+            :before : 가장 앞에 요소를 삽입
+            :after :  가장 뒤에 요소를 삽입
+            :first-line : 요소의 첫 번째 줄에 있는 택스트
+            :first-letter : 블록 레벨 요소의 첫 번째 문자
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="EUC-KR">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+        p:before{
+            color:red;
+            content : "bofore 가상 요소를 활용한 내용";
+        }
+        p:after{
+            color:blue;
+            content : "after 가상 요소를 활용한 내용";
+        } 
+        p:first-line {
+            color:yellow;
+        }
+        */
+
+        p:first-letter{
+            font-size: 3em;
+        }
+    </style>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Deleniti molestias sed dolor officiis odit, optio sunt, 
+        aut asperiores aliquid, inventore maxime perspiciatis dignissimos 
+        voluptatum vitae. Iusto, voluptate sapiente? Aspernatur, laboriosam.</p>
+</body>
+</html>
