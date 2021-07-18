@@ -1,0 +1,77 @@
+<!--
+    속성
+        background-color : green;
+        background-image : url("img-treen.gif")
+        background-repeat : no-repeat;
+        background-position : top center;
+        background-attachment : scroll;
+    background 관련 속성
+        - background-color
+         기본 값 : transparent
+        배경의 색강을 지정하는 속성이다.
+        앞선 생상 강의에서 배운 색상 값 적용 방식과 같다.
+
+        - background-image
+            기본 값 : none
+        배경으로 사용할 이미지의 경로를 지정하는 속성이다.
+        url의 경로는 절대 경로, 상대 경로 모두 사용이 가능하다.
+        만약 background-color에 색상이 적용된 상태에서 background-image로 사용된 이미지에 투명한 부분이 있다면,
+        그 부분에 background-color 색상이 노출된다.
+
+        - background-repeat(배경 반복)
+            기본 값 : repeat
+        이미지의 반복 여부와 방향을 지정하는 속성이다.
+        기본값이 repeat이기 때문에 따로 설정하지 않으면 x,y축으로 반복되어 표시된다.
+        background-repeat의 값으로 사용할 수 있는 것들은 다음과 같다.
+            <속성 값>
+            repeat x,y축으로 모두 반복한다.
+            repeat-x x축 방향으로만 반복한다.
+            repeat-y y축 방향으로만 반복한다.
+            no-repeat 이미지를 반복하지 않는다.
+        
+        - background-position(배경 위치)
+            기본 값: scroll 화면 스크롤에 따른 배경 이미지의 움직임 여부를 지정하는 속성
+            <속성 값>
+                % 기준으로부터 % 만큼 떨어진 지점과 이미지의 % 지점이 일치하는 곳에 위치시킨다.
+                px 기준으로부터 px만큼 떨어진 지점과 이미지의 (0,0) 지점이 일치하는 곳에 위치시킨다.
+                    top, left, right, bottom, center 키워드를 사용할 수 있다
+                키워드 키워드는 선언 순서와 관계없이 top,bottom은 y축 기준으로 하며 left,right는 x축을 기준으로 한다.    
+
+        - background-attachment(배경 첨부)
+            기본 값 : scroll에 화면 스크롤에 따른 배경 이미지의 움직임 여부를 지정하는 속성이다.
+            <속성 값>
+                scroll 배경 이미지는 요소 자체를 기준으로 고정되어 있으며 내용과 함께 스크롤 되지 않는다.
+                local 배경 이미지는 요소의 내용을 기준으로 고정되어 있으며 내용과 함께 스크롤 된다.
+                fixed 베경 이미지는 뷰 포토를 기준으로 고정되어 있으며 스크롤에 영향을 받지 않는다.
+ 
+    축약형
+        background-color:green url("./pizza.png") no-repeat fixed center
+        배경 색상 -> 배경 이미지 -> (배경 위치 <-> 배경 첨부 이 2개의 위치는 딱히 상관 X)
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="EUC-KR">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            height: 1500px;
+            background-color: pink;
+            background-image: url(./pizza.png);
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-attachment: center center;
+        }
+        span{background-color: pink;}
+    </style>
+</head>
+<body>
+    <div>배경에 대해서 알아보자.</div>
+    <span>배경에 대해서 알아보자.</span>
+</body>
+
+</html>
