@@ -1,0 +1,46 @@
+<!--
+    margin과 padding의 비교
+                +   -   auto    단위
+        margin  O   O    O       px,%...
+        padding O   X    X       px,%...  
+        
+            - 음수값 사용 가능 여부 : 왜 margin은 음수 값 적용이 가능하고, padding은 적용되지 않을까? 
+            예를 들어 생각해보자면 padding은 뼈와 우리 피부 사이의 지방이라고 생각하고, margin은 사람과 사람 사이의 
+            간격이라고 생각하면 쉽다. 지방은 아무리 뺀다고 해서 피부가 뼈보다 밑으로 갈 수 없을 뿐만 아니라,
+            0 이하가 될 수 없으므로 양수만 된다고 생각하면 된다.
+            그러나 사람과 사람 사이는 멀리 떨어질 수도 있지만, 서로 겹쳐서 서 있을 수도 있으므로 음수 값이 가능하다고 생각하면 된다.
+            - %값의 사용과 기준점 : margin과 padding 은 px과 같은 고정적인 단위 외에도 %라느 상재적인 단위를 사용할 수 있다.
+            %는 요소의 크기를 기준으로 상대적인 값을 결정짓게 된다. 얼핏 생각하면, 상하는 height 값에 대한 좌우는 width 값에 대해 크기가 계산될
+            거 같지만 그렇지 않다. %는 상하좌우의 방향에 관계없이 모든 요소의 width 값을 기준으로 값이 결정된다.
+
+            div{
+                width:100px;
+                height:200px;
+                margin: 10%;
+                padding : 10%;
+            }
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="EUC-KR">
+    <style>
+        div{
+           /* 
+                margin: 0 -50px; 
+                padding-right: 50%;
+                padding-top: 10%;
+           */
+            margin-left: 50%;
+            margin-bottom: 30%; 
+            border : 10px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        Box Model을 알아보자
+    </div>
+</body>
+</html>
