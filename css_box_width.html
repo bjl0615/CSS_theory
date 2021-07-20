@@ -1,0 +1,73 @@
+<!--
+    요소의 가로 크기를 지정하는 width 속성은 인라인 레벨 요소를 제외한 모든 요소에 적용된다.
+    
+    width 속성
+        기본 값 : 0
+            <속성 값>
+                auto 브라우저에 의해 자동으로 계산하여 적용한다,
+                length 고정값으로 지정한다. (ex,px,em ...)
+                percent 부모 요소의 width에 상대적인 크기를 지정한다.
+
+        width는 content 영역의 너비를 제어할 때 사용하는데 이때 auto가 아닌 특정한 값을 지정하여 사용하면,
+        그 크기는 boc model 영역에서 margin 영역을 제외한 모든 영역에 대해 영향을 받는다.(content,oadding,border)
+
+        예를 들어
+        <div class="box">box</div>
+
+        .box{
+            width: 100px;
+            padding: 20px;
+            border: 10ox solid black;
+        }
+        위와 같이 선언되어있다면 요소의 총 가로 크기는 160px가 된다.
+        분명 width: 100px를 적용했는데 어떻게 160px이 될까?
+        앞선 설명에서 언급한 바와 같이 width는 padding, border 영역에 대해서 영향을 받기 때문이다.
+
+        <div class="parent">
+            <div class="child">
+                child
+            </div>
+        </div>
+        
+        .parent{
+            width:  300px;
+            border: 20px solid red;
+        }
+        .child{
+            width:  50%;
+            padding : 20px;
+            border: 10px solid black;
+        }
+        위와 같이 코드를 적용 했을 때. child의 크기는 어떻게 적용될까?
+
+        답은 210px 이다.
+        우선, padding (20px*2) + border (10px * 2) = 60px 이다.
+        210px - 60px = 150px 이며, 150px은 부모의 width가 300px이므로 300px의 50%dls 150px이 width값으로 결정된 것이다.
+        결국 %값을 때는 부모의 width값에 대해서 계산되어지는데,
+        이때 부모의 width는 content 영역의 크기를 의미한다.
+        부모의 padding과 border까지 더해진 요소의 전체 크기가 아닌, content 영역의 크기기 기준이라는 것을 기역하면 된다.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="EUC-KR">
+    <style>
+        .parent{
+            border: 10px solid blue;
+        }
+        .child{
+            width:300px;
+            padding:20px;
+            border: 10px solid red; 
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child">
+                Box Model을 알아보자
+        </div>
+    </div>
+</body>
+</html>
