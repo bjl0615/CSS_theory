@@ -1,0 +1,124 @@
+<!--
+    @font-face
+        웹에 있는 글꼴을 사용자의 로컬 환경(컴퓨터)으로 다운로드 하여 적용하는 속성이다.
+            기본 값 : 없음
+                @font-size{
+                    font-properties
+                }
+                    <속성 값>
+                        font-family(필수) : 글꼴의 이름을 지정
+                        src(필수) 다운로드 받을 글꼴의 경로(URL)
+                        font-style(옵션) : 글꼴의 스타일 지정, 기본 값은 normal
+                        font-weight(옵션) : 글꼴의 굵기 지정, 기본 값은 normal
+
+                사용 예시는 다음과 같다
+                    @font-face{
+                        font-family : webNanumGthic;        /* 사용자 지정 웹 폰트명 */
+                        src : url(NanumGothic.eot);         /* 적용 될 웹 폰트의 경로 */
+                        font-weight : bold;                 /* 필요에 따라 지정 */
+                        font-style : italic;                /* 필요에 따라 지정 */
+                    }
+
+                    body{
+                        font-family:webNanumGothic;
+                    }
+                    웹 폰트는 선언 시 필요에 따라 굵기나 스타일 등을 같이 지정해서 사용할 수 있다.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="EUC-KR">
+    <style>
+        /*
+        @font-face {
+            font-family: NanumSquareWeb;
+            src:    local(NanumSquareR),
+                    local(NauimSquare),
+                    url(NanumSquareR.eot?#iefix) format('embedded-opentype'),
+                    url(NanumSquareR.off) format('woff'),
+                    url(NanumSquareR.ttf) format('truetype');
+            font-style: normal;
+            font-weight: normal;
+            unicode-range: U+0-10FFFF;
+        }
+        */
+        @font-face{
+            font-family: NuumSquareWeb;
+            src : url(NanumSquareL.woff) format('woff');
+            font-weight : 300;
+        }
+        @font-face{
+            font-family: NuumSquareWeb;
+            src : url(NanumSquareR.woff) format('woff');
+            font-weight : 400;
+        }
+        @font-face{
+            font-family: NuumSquareWeb;
+            src : url(NanumSquareB.woff) format('woff');
+            font-weight : 700;
+        }
+        @font-face{
+            font-family: NuumSquareWeb;
+            src : url(NanumSquareEB.woff) format('woff');
+            font-weight : 800;
+        }
+        /*
+            위의 코드를 보면 웹폰트 패밀리명은 NaumSquareWeb으로 하나지만 font-weight를 이용하여 사용할 웹폰트를 다르게 선언하고 있다.
+            (@font-face에 적용한 font-weight는 일반적으로 사용되는 굵기에 대응하는 값을 적어주는 것이 좋다)
+            font-weight가  300일 경우에는 NaumSquareL.woff,
+            font-weight가  400일 경우에는 NaumSquareR.woff,
+            font-weight가  700일 경우에는 NaumSquareB.woff,
+            font-weight가  800일 경우에는 NaumSquareEB.woff 가 적용된다
+            font-weight 200, font-weight 600은 선언이 안되있는데 font-weight: 200과 font-weight:600일 경우 어떤 웹폰트가 적용될까>
+        */
+        /*
+        h1{
+            font-family : NanumSquareWeb, sans-serif;
+        }
+        */
+
+        h1{
+            font-family: NaumSquareWeb, sans-serif;
+            font-weight: 200;   /* ? */
+        }
+        h2{
+            font-family: NaumSquareWeb, sans-serif;
+            font-weight: 600;   /* ? */
+        }
+        /* 
+            만약 정확이 주어진 font-weight를 사용할 수 없다면 실제로 렌덩링 되는 font-weight를 결정하기 위해 다음과 같이 규칙 적용 된다. 
+                - 민약 font-weight기 600 이상이면, 가능한 큰 font-weight 중 가장 가까운 font-weight 중 가장 가까운 font-weight가 적영된다.(만약 없다면 작은 font-weight 중 가까운 font-weight)
+                - 만약 font-weight가 300 이하이면, 가능한 작은 font-weight 중 가장 가까운 font-weight가 적용된다.(만약 없다면 큰 font-wright 중 가까운 font-weight) 
+                - 만약 font-weight가 400이면, 500이 없으면 300 이하일 때 규칙이 적용된다.
+                - 만약 font-weight가 500이면, 400이 적용되고 400이 없으면 300 이하일 때 규칙이 적용된다.   
+
+            위의 규칙에 따르먄 font-weight: 200은 가능한 작은 font-weight 중 가까윤 font-weight: 300이 적용되는 NaumeSquareL 폰트가 적용되고, font-weight: 600은 가능한 큰 font-weight 중 가까운 font-weight: 700이 적용되어 NaumeSquareB가 적용된다.
+         */
+        h1{
+            font-family: NaumSquareWeb, sans-serif;
+            font-weight: 200; /* NaumSquareL */
+        }
+        h2{
+            font-family: NaumSquareWeb, sans-serif;
+            font-weight: 600; /* NaumSquareB */
+        }
+        /*
+            단일 코드
+                U+AC01 처럼 단일 유니코드를 사용할 수 있다. 콤마(,)를 이용해서 두 개 이상의 값도 넣을 수 있다.
+        */
+        @font-face {
+            font-family: NaumSquareWeb;
+            src: url(NaumSquare:.woff) format('woff');
+            unicode-range: U+AC01, U+AC08;
+        }
+        /*
+            U+AC01은 '각'에 해당하고 U+AC08은 '갈'에 해당하므로 '각'과 '길' 부분이 변경되었디.
+        */
+
+    </style>
+</head>
+<body>
+    <h1>가나다라마바사</h1>
+</body>
+</html>
