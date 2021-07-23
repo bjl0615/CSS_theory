@@ -1,0 +1,25 @@
+<!--
+    font 관련 속성
+        font-style, font-variant, font-weight, font-size/font-height, font-family 속성들은 한 번에 선언할 수 있는 축약형 속성이다.
+            기본 값 : 각 속성들의 기본 값
+                font:font-style font-variant font-weight font-size/line-height font-family | inital | inherit;
+                    <속성 값>
+                        font-style : font-style 지장, 기본 값은 normal
+                        font-variant : font-variant 지정, 기본 값은 normal
+                        font-weight : font-weight 지정, 기본 값은 noraml
+                        font-size/line-height : font-size/line-height 지정, 기본 값은 normal
+                        font-family : font-family 지정
+                            /* style | size | family */
+                                font : oblique 2em "돋음", dotum , sans-serif
+
+                            /* style | variant | weight | size/line-height | family */
+                                font : oblique small-caps bold 16px/1,5 '돋음';
+
+                            /* The font used in system dialogs */
+                                font : message-box;
+                                font : icon;
+                        축약형을 선언할 때는 아래 상항들을 유의해야 한다.
+                            - font-size와 font-family는 반드시 선언해야 하는 필수 속성이다.
+                            - 빠진 속성이 있다면 기본 값으로 지정을 해야 한다.
+                            - 각 속성의 선언 순서를 지켜야 한다.
+-->
