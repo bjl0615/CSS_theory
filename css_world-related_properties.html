@@ -1,0 +1,58 @@
+<!--
+    white-space 속성
+        요소 안에 공백을 어떻게 처리할지 지정하는 속성이다.
+            기본 값 :  normal
+                white-space: normal | nowrap | pre | pre-line | inital | inherit;
+                    <속성 값>
+                        normal  공백과 개행을 무시하고, 필요한 경우에 자동 줄바꿈 발생. 기본 값
+                        nowrap  공백과 개행을 무시하고, 자동 줄바꿈이 일어나지 않음
+                        pre     공백과 개행을 무시하고, 자동 줄바꿈이 일어나지 않음
+                        pre-line 공백은무시하고 개행만 표현, 필요한 경우애 자동 줄바꿈 발생
+                        pre-wrap 개행은 무시하고, 공백만 표현. 필요한 경우 줄바꿈 발생.
+
+    letter-spacing 속성
+        자간을 지정하는 속성이다.
+            기본 값 : normal
+                letter-spacing: normal | length | initial | inherit;
+                    <속성 값>
+                        normal  기본 값
+                        length  길이만큼 자간을 지정. 음수 허용
+    
+    word-spacing 속성
+        단어 사이의 간격을 지정하는 속성이다.
+            기본 갓: normal
+                word-spacing: normallength | iniral | inherit;
+                    <속성 값>
+                        normal  기본 값, 중단점은 공백이나 하이픈(-)(CJK는 음절)
+                        break-all   중단점은 음절. 모든 글자가 요소를 벗어나지 않고 개행
+                        keep-all    중단점은 공백이나 하이픈(-)(CJK는 그 외 기호도 포함)
+
+    word-wrap 속성
+        요소를 벗어난 단어의 줄바꿈을 지정하는 속성
+            기본 값 : normal
+                word-wrap : normal | breal-word | inital | inherit;
+                    <속성 값>
+                        normal  기본 값. 중단점에서 개행
+                        break-word  모든 글자가 요소를 벗어나지 않고 강제로 개행                    
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="EUC-KR">
+    <style>
+        div{
+            /*
+            white-space: normal;
+            letter-spacing: 4px;
+            word-spacing: 10px;
+            word-break: break-all;
+            */
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores quisquam repudiandae hic nemo! Optio delectus molestiae minima itaque blanditiis commodi ipsam veniam, </div>
+</body>
+</html>
