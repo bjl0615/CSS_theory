@@ -1,0 +1,59 @@
+<!--
+    clear 속성 
+        요소를 floating 된 요소의 영향에서 벗어나게 하는 속서이다.
+            기본 값 : none
+                clear: none | left | right | both | inital | inherit;
+                    <속성 값>
+                        none : 양쪽으로 floating 요소를 허용(기본 값)
+                        left : 왼쪽으로 floating 요소를 허용하지 않음
+                        right: 오른쪽으로 floating 요소를 허용하지 않음
+                        both: 양쪽으로 floating 요소를 허용하지 않음
+                            -block -level 요소만 적용 가능
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="EUC-KR">
+    <style>
+        .container{
+            border: 1px dashed #aaa;
+        }
+
+        div,
+        span{
+            padding: 20px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <h2>clear: none</h2>
+        <div class="container">
+            <div style="float:left">float:left</div>
+            <span style="display:block; clear:none"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti illum eveniet non sed hic voluptatum pariatur quo reprehenderit minus facere. Voluptas odit quasi nulla tenetur consequatur velit dolor, enim aut.</span>
+        </div>
+        
+    <h2>clear:left</h2>
+        <div class="container">
+            <div style="float:left">float:left</div>
+            <span style="display:block; clear:left">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae doloremque facilis illum magnam eaque tempore aspernatur neque repudiandae voluptate quas non ducimus molestias nisi ipsum incidunt sed, natus earum deleniti.</span>
+        </div> 
+
+    <h2>clear:right</h2>
+        <div class="container">
+            <div style="float:right">float:left</div>
+            <span style="display:block; clear:right">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae doloremque facilis illum magnam eaque tempore aspernatur neque repudiandae voluptate quas non ducimus molestias nisi ipsum incidunt sed, natus earum deleniti.</span>
+        </div>
+
+    <h2>clear:both</h2>
+        <div class="container">
+            <div style="float:left">float:left</div>
+            <div style="float:right">float:right</div>
+            <span style="display:block; clear:both">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae doloremque facilis illum magnam eaque tempore aspernatur neque repudiandae voluptate quas non ducimus molestias nisi ipsum incidunt sed, natus earum deleniti.</span>
+        </div> 
+        
+        
+        
+</body>
+</html>
