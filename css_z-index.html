@@ -1,0 +1,70 @@
+<!--
+    z-index 속성
+        기본 값 : auto
+            요소가 겹치는 순서(쌍임 순서 또는 stack prder)를 지정하는 속성이다.
+                z-index: auto | number | inital | inherit;
+                    <속성 값>
+                        auto : 쌓임 순서를 부모와 동일하게 설정(기본 값)
+                        number : 해당 수치로 쌓임 순서를 설정(음수 허용)
+                            z-index : 1;
+
+                - position 값이 static이 아닌 경우 지정 가능
+                - 순서 값이 없을 경우 생성순서(코드상 순서)에 띠리 쌓임
+                - 부모가 z-index 값이 있을 경우 부모 안에서만 의미있음
+                - 큰 값이 가장 위쪽(음수 사용 가능)
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="EUC-KR">
+    <style>
+        .parent{
+            z-index: 10;
+            position: relative;
+            width: 300px;
+            height: 50px;
+            border: 2px solid #000;
+            background-color: #ccc;
+
+            
+        }
+
+        .child{
+            z-index: 10;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            border: 2px solid red;
+
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1 class="practive_title">z-index 속성</h1>
+        <div class="z_area">
+            <div class="parent" style="z-index:11">
+                positionL relative;
+                <div class="child" style="right: 20px; z-index: 1000;">
+                    position: absolute
+                </div>
+            </div>
+            <div class="parent" style="z-index:20">
+                position: relative
+                <div class="child" style="z-index:1;">
+                    position: absolute
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    
+</body>
+</html>
