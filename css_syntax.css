@@ -60,6 +60,7 @@
                 : 쉼표로 연결된 미디어 쿼리 중 하나라도 참이면 적용된다(and 키워드 반대라고 생각하면 된다)
                     (orientation: 뷰포트의 방향)
                     (portrait : 세로 모드)
+                    (landscape: 가로 모드)
             @media not screen and (min-width: 768px)
                 : not 키워드는 하나의 media-query 전체를 부정한다.
                 : (not screen) and (min-width: 768px) 잘못된 해석!
