@@ -85,12 +85,19 @@
             body{background-color: lightpink;}
         } */
         /* dsktop-first */
-        body { background-color: lightpink; }
+        /* body { background-color: lightpink; }
         @media screen and (min-width: 768px) and (max-width:1024px){
             body{ background-color: lightblue;}
         }
         @media screen and (max-width:767px ){
             body{ background-color: gold;}
+        } */
+        @media print {
+            a {text-decoration: none;}
+            a:after{
+                display: inline;
+                content: "("attr(href)")";
+            }
         }
     </style>
 </head>
