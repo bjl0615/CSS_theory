@@ -1,0 +1,62 @@
+<!--
+    CSS border-radius 속성은 요소 테두리 경계의 꼭짓점을 둥글게 만들어준다.
+    하나의 값을 사용해 원형 꼭지점을, 두 개의 값을 사용해 꼭지점을 적용할 수 있다.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="EUC-KR">
+    <style>
+        .parent{
+            margin:40px;
+            
+            background-color: darkslateblue;
+            width: 300px;
+            height: 300px;
+            text-align: center center;
+            color: white;
+        }
+        .radius{
+            /* Radius is set for all 4 sides */
+                border-radius: 10px;
+
+            /* top-left-and-bottom-right | top-right-and-bottom-left
+                border-radius: 10px 5%;  */
+
+            /* top-left | top-right-and-bottom-left | bottom-right
+                border-radius: 2px 4px 2px; */
+
+            /* top-left | top-right | bottom-right | bottom-left
+                border-radius: 1px 0 3px 4px; */
+
+            /* The syntax of the second radius allows one to four values */
+            /* (first radius values) / radius
+                border-radius: 10px 5% / 20px; */
+
+                /* (first radius values) / top-left-and-bottom-right | top-right-and-bottom-left
+                border-radius: 10px 5% / 20px 30px; */
+
+                /* (first radius values) / top-left | top-right-and-bottom-left | bottom-right
+                border-radius: 10px 5px 2em / 20px 25px 30%; */
+
+                /* (first radius values) / top-left | top-right | bottom-right | bottom-left
+                border-radius: 10px 5% / 20px 25em 30px 35em; */
+
+                /* Global values
+                border-radius: inherit;
+                border-radius: initial;
+                border-radius: unset; */
+        }
+        p{
+            padding-top: 45%;
+            padding-left: 5%;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent radius">
+        <p>This is a box width rounded conrners</p>
+    </div>
+</body>
+</html>
